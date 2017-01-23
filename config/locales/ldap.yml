@@ -1,0 +1,47 @@
+## Environments
+
+#development:
+#  host: localhost
+#  port: 636
+#  attribute: cn
+#  base: ou=people,dc=hostname-test,dc=com
+#  admin_user: cn=root,dc=hostname-test,dc=com
+#  admin_password: secrets
+#  ssl: simple_tls
+
+development: 
+  host: jeanmartin.com
+  port: 3268
+  attribute: sAMAccountName
+  base: dc=jeanmartin,dc=com
+  objectClass: User
+  admin_user: cn=s_glb_corpsvn,ou=Service Accounts,ou=Global,ou=JEANMARTIN,dc=jeanmartin,dc=com
+  admin_password: ItSh0uldW0rk!
+  ssl: false
+  # <<: *AUTHORIZATIONS
+
+ 
+test:
+  host: localhost
+  port: 3389
+  attribute: cn
+  base: ou=people,dc=test,dc=com
+  admin_user: cn=admin,dc=test,dc=com
+  admin_password: admin_password
+  ssl: simple_tls
+  # <<: *AUTHORIZATIONS
+
+ 
+
+production:
+
+  host: 10.28.127.45
+  port: 389
+  attribute: cn
+  base: dc=ad,dc=hostname,dc=com
+  admin_user: cn=ldapsearch,cn=Users,dc=ad,dc=hostname,dc=com
+  admin_password: secret
+  ssl: false
+  # <<: *AUTHORIZATIONS
+
+ 
